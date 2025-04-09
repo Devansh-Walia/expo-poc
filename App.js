@@ -1,13 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import CustomButton from './components/CustomButton';
+import { StyleSheet, View } from 'react-native';
+import Card from './components/Card';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Hello World!!!!</Text>
       <StatusBar style="auto" />
-      <CustomButton title="Click Me" onPress={() => {}} />
+      <Card />
     </View>
   );
 }
@@ -15,7 +14,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#f5f5f5',
     alignItems: 'center',
     justifyContent: 'center',
   },
