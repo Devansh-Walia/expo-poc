@@ -1,5 +1,6 @@
 import React from 'react';
 import { Pressable, Text, StyleSheet } from 'react-native';
+import { colors } from '../constants/colors';
 
 const CustomButton = ({
   onPress,
@@ -12,7 +13,7 @@ const CustomButton = ({
     <Pressable
       style={[styles.button, disabled && styles.disabled, style]}
       onPress={onPress}
-      android_ripple={"#2196F3"}
+      android_ripple={{ color: colors.primary[400] }}
       disabled={disabled}
       activeOpacity={0.7}
     >
@@ -23,24 +24,24 @@ const CustomButton = ({
 
 const styles = StyleSheet.create({
   button: {
-    backgroundColor: '#2196F3',
+    backgroundColor: colors.primary[600],
     paddingVertical: 12,
     paddingHorizontal: 24,
     borderRadius: 8,
     elevation: 3,
-    shadowColor: '#000',
+    shadowColor: colors.neutral[900],
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
   },
   buttonText: {
-    color: 'white',
+    color: colors.neutral[100],
     fontSize: 16,
     fontWeight: '600',
     textAlign: 'center',
   },
   disabled: {
-    backgroundColor: '#cccccc',
+    backgroundColor: colors.neutral[400],
     opacity: 0.7,
   },
 });

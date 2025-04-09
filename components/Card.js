@@ -3,6 +3,7 @@ import { View, Text, TextInput, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import CustomButton from './CustomButton';
 import useStore from '../store/userStore';
+import { colors } from '../constants/colors';
 
 const Card = () => {
   const [inputText, setInputText] = useState('');
@@ -41,12 +42,12 @@ const Card = () => {
 
 const styles = StyleSheet.create({
   card: {
-    backgroundColor: 'rgba(255, 255, 255, 0.95)',
+    backgroundColor: colors.neutral[50],
     borderRadius: 12,
     padding: 20,
     width: '85%',
     elevation: 6,
-    shadowColor: '#000',
+    shadowColor: colors.neutral[900],
     shadowOffset: {
       width: 0,
       height: 3,
@@ -59,11 +60,11 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     marginBottom: 16,
     textAlign: 'center',
-    color: '#1a1a1a',
+    color: colors.neutral[800],
   },
   input: {
     borderWidth: 1,
-    borderColor: '#ddd',
+    borderColor: colors.neutral[300],
     borderRadius: 8,
     padding: 12,
     marginBottom: 16,
@@ -71,7 +72,7 @@ const styles = StyleSheet.create({
   },
   description: {
     fontSize: 16,
-    color: '#666',
+    color: colors.neutral[600],
     marginBottom: 16,
     textAlign: 'center',
   },
