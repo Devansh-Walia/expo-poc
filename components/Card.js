@@ -28,7 +28,7 @@ const Card = () => {
 
 const styles = StyleSheet.create({
   card: {
-    backgroundColor: 'white',
+    backgroundColor: 'rgba(255, 255, 255, 0.95)',
     borderRadius: 12,
     padding: 20,
     width: '85%',
@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     marginBottom: 16,
     textAlign: 'center',
-    color: '#333',
+    color: '#1a1a1a',
   },
   input: {
     borderWidth: 1,
