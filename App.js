@@ -6,6 +6,7 @@ import { useFonts } from 'expo-font';
 import { View, Text, KeyboardAvoidingView, Platform } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { colors } from './constants/colors/colors';
+import { StatusBar } from 'expo-status-bar';
 
 const Stack = createNativeStackNavigator();
 
@@ -24,6 +25,7 @@ export default function App() {
 
   return (
     <SafeAreaProvider>
+      <StatusBar style="light" />
       <KeyboardAvoidingView 
         style={{ flex: 1 }} 
         behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
