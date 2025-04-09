@@ -1,9 +1,22 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, StyleSheet } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 import CustomButton from './CustomButton';
+import useStore from '../store/userStore';
 
 const Card = () => {
   const [inputText, setInputText] = useState('');
+  const navigation = useNavigation();
+  const setUserName = useStore((state) => state.setUserName);
+
+  const handleSubmit = () => {
+    if (inputText.trim()) {
+      setUserName(inputText.trim());
+      navigation.navigate('Welcome');
+    } else {
+      alert('Please enter your name');
+    }
+  };
 
   return (
     <View style={styles.card}>
@@ -19,7 +32,7 @@ const Card = () => {
       </Text>
       <CustomButton 
         title="Submit"
-        onPress={() => alert(`Welcome ${inputText}!`)}
+        onPress={handleSubmit}
         style={styles.button}
       />
     </View>
