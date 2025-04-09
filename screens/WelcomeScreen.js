@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, StyleSheet, ScrollView } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import useStore from '../store/userStore';
-import { colors } from '../constants/colors';
+import { colors } from '../constants/colors/colors';
 import { AntDesign } from '@expo/vector-icons';
 import { useWindowDimensions } from 'react-native';
 

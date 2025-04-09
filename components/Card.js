@@ -3,7 +3,7 @@ import { View, Text, TextInput, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import CustomButton from './CustomButton';
 import useStore from '../store/userStore';
-import { colors } from '../constants/colors';
+import { colors } from '../constants/colors/colors';
 
 const Card = () => {
   const [inputText, setInputText] = useState('');

@@ -6,6 +6,7 @@ export const colors = {
     400: 'rgba(76, 102, 159, 0.7)',
     500: 'rgba(76, 102, 159, 0.9)',
     600: '#4c669f',
+    
   },
 
   secondary: {
