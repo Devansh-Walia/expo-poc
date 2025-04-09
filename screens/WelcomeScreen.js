@@ -3,6 +3,7 @@ import { View, Text, StyleSheet } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import useStore from '../store/userStore';
 import { colors } from '../constants/colors';
+import { AntDesign } from '@expo/vector-icons';
 
 const WelcomeScreen = () => {
   const userName = useStore((state) => state.userName);
@@ -13,9 +14,11 @@ const WelcomeScreen = () => {
       style={styles.container}
     >
       <View style={styles.content}>
+        <AntDesign name="star" size={50} color={colors.primary[500]} style={styles.icon} />
         <Text style={styles.welcomeText}>Welcome</Text>
         <Text style={styles.nameText}>{userName}!</Text>
         <Text style={styles.message}>We're glad to have you here.</Text>
+        <AntDesign name="heart" size={40} color={colors.secondary[500]} style={styles.icon} />
       </View>
     </LinearGradient>
   );
@@ -32,24 +35,32 @@ const styles = StyleSheet.create({
     padding: 30,
     borderRadius: 15,
     alignItems: 'center',
-    width: '85%',
+    elevation: 5,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
   },
   welcomeText: {
-    fontSize: 32,
-    fontWeight: 'bold',
-    color: colors.neutral[800],
+    fontSize: 36,
+    color: colors.primary[700],
     marginBottom: 10,
+    fontFamily: 'Pacifico',
   },
   nameText: {
-    fontSize: 24,
-    color: colors.primary[600],
-    fontWeight: '600',
-    marginBottom: 20,
+    fontSize: 28,
+    color: colors.secondary[700],
+    marginBottom: 15,
+    fontFamily: 'Pacifico',
   },
   message: {
     fontSize: 18,
-    color: colors.neutral[600],
+    color: colors.neutral[700],
     textAlign: 'center',
+    fontFamily: 'Pacifico',
+  },
+  icon: {
+    marginVertical: 10,
   },
 });
 
