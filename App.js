@@ -5,6 +5,7 @@ import HomeScreen from './screens/HomeScreen';
 import { useFonts } from 'expo-font';
 import { View, Text, KeyboardAvoidingView, Platform } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { colors } from './constants/colors/colors';
 
 const Stack = createNativeStackNavigator();
 
@@ -30,11 +31,27 @@ export default function App() {
         <NavigationContainer>
           <Stack.Navigator
             screenOptions={{
-              headerShown: false,
+              headerShown: false, 
+              headerStyle: {
+                backgroundColor: colors.primary[500],
+              },
+              headerTintColor: colors.neutral[50],
+              headerTitleStyle: {
+                fontFamily: 'Pacifico',
+              },
             }}
           >
-            <Stack.Screen name="Home" component={HomeScreen} />
-            <Stack.Screen name="Welcome" component={WelcomeScreen} />
+            <Stack.Screen 
+              name="Home" 
+              component={HomeScreen}
+            />
+            <Stack.Screen 
+              name="Welcome" 
+              component={WelcomeScreen}
+              options={{
+                headerShown: true, 
+              }}
+            />
           </Stack.Navigator>
         </NavigationContainer>
       </KeyboardAvoidingView>
